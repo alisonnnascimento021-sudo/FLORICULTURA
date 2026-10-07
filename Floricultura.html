@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Floricultura.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="generator" content="SynEdit HTML exporter" />
+<style type="text/css">
+<!--
+body { color: #000000; background-color: #FFFFFF; }
+.cpp1-assembler { color: #0000FF; }
+.cpp1-character { color: #000000; }
+.cpp1-comment { color: #0078D7; font-style: italic; }
+.cpp1-float { color: #800080; }
+.cpp1-hexadecimal { color: #800080; }
+.cpp1-identifier { color: #000000; }
+.cpp1-illegalchar { color: #000000; }
+.cpp1-number { color: #800080; }
+.cpp1-octal { color: #800080; }
+.cpp1-preprocessor { color: #008000; }
+.cpp1-reservedword { color: #000000; font-weight: bold; }
+.cpp1-space { background-color: #FFFFFF; color: #000000; }
+.cpp1-string { color: #0000FF; font-weight: bold; }
+.cpp1-symbol { color: #FF0000; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<code><span style="font: 9pt Consolas;"><span class="cpp1-preprocessor">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+</span><span class="cpp1-comment">/* run this program using the console pauser or add your own getch, system(&quot;pause&quot;) or input loop */
+
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> main</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> argc</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> </span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">argv</span><span class="cpp1-symbol">[])</span><span class="cpp1-space"> </span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">	</span><span class="cpp1-comment">//login
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> usuario</span><span class="cpp1-symbol">[</span><span class="cpp1-number">20</span><span class="cpp1-symbol">];
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> senha</span><span class="cpp1-symbol">[</span><span class="cpp1-number">20</span><span class="cpp1-symbol">];
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;===Floricultura===\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Digite seu usuario: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%19s&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">usuario</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;digite sua senha: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%19s&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">senha</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	
+	</span><span class="cpp1-comment">//verificando usuario e senha
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">strcmp</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">usuario</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-string">&quot;Login&quot;</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">==</span><span class="cpp1-space">  </span><span class="cpp1-number">0</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;&amp;</span><span class="cpp1-space"> strcmp</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">senha</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-string">&quot;1234&quot;</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nLogin realizado com sucesso! \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Bem vindo, %s\n&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> usuario</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}</span><span class="cpp1-space">	
+	</span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nUsuario incorreto ou senha incorreto!\n&quot;</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">return</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+}
+
+</span><span class="cpp1-comment">//==========
+//carrinho
+//==========
+
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> opcao</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> quantidade</span><span class="cpp1-symbol">;
+
+</span><span class="cpp1-reservedword">float</span><span class="cpp1-space"> total </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> rosa </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> girassol </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> tulipa </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> Orquidea </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+
+
+</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> continuar</span><span class="cpp1-symbol">;
+</span><span class="cpp1-comment">//==========
+//menu
+//==========
+
+</span><span class="cpp1-reservedword">do</span><span class="cpp1-symbol">{
+
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n================================\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;            MENU FLORICULTURA\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n=================================\n&quot;</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n1 Rosa    - R$25.00&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n2 Girassol   - R$20.00&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n3 Tulipa     - R$30.00&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n4 Orquidea  - R$45.00&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n5 - Sair&quot;</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n\n Escolha uma opcao: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">opcao</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-comment">//escolha da flor
+//================
+
+</span><span class="cpp1-reservedword">switch</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">opcao</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">1</span><span class="cpp1-symbol">:
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nVoce escolheu rosa!&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nQuantas deseja comprar? &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">quantidade</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		
+		rosa </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> rosa </span><span class="cpp1-symbol">+</span><span class="cpp1-space"> quantidade</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nRosas adicionadas no carrinho!&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">		
+		</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">2</span><span class="cpp1-symbol">:
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nVoce escolheu Girassol!&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nQuantas deseja comprar?&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">quantidade</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			
+			girassol </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> girassol </span><span class="cpp1-symbol">+</span><span class="cpp1-space"> quantidade</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nGirassol adicionado no carrinho!&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">			
+			</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">3</span><span class="cpp1-symbol">:
+</span><span class="cpp1-space">				printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nVoce escolheu a tulipa!&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nQuantas deseja comprar?&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">quantidade</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				
+				tulipa </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> tulipa </span><span class="cpp1-symbol">+</span><span class="cpp1-space"> quantidade</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">				printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\Tulipa adicionado no carrinho!&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				
+			   </span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">				
+				</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">4</span><span class="cpp1-symbol">:
+</span><span class="cpp1-space">				printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nVoce escolheu a orquidea!&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nQuantas deseja compras?&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">quantidade</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				
+				Orquidea </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> Orquidea </span><span class="cpp1-symbol">+</span><span class="cpp1-space"> quantidade</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">				printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nOrquidea adicionado no carrinho&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">				
+				</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">5</span><span class="cpp1-symbol">:
+</span><span class="cpp1-space">					printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nFinalizando compra...&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				
+				</span><span class="cpp1-reservedword">default</span><span class="cpp1-symbol">:
+</span><span class="cpp1-space">				printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nOpcao invalida!\n &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">				continuar </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> 'n'</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">				</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;</span><span class="cpp1-space"> 
+</span><span class="cpp1-symbol">}
+
+</span><span class="cpp1-comment">// =====================
+// CONTINUAR COMPRA
+// =====================
+
+</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">opcao </span><span class="cpp1-symbol">&gt;=</span><span class="cpp1-space"> </span><span class="cpp1-number">1</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;&amp;</span><span class="cpp1-space"> opcao </span><span class="cpp1-symbol">&lt;=</span><span class="cpp1-number">4</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n\nDeseja compra outra flor? (s/n): &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; %c&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">continuar</span><span class="cpp1-symbol">);
+}
+</span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">	continuar </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> 'n'</span><span class="cpp1-symbol">;
+}
+
+
+}</span><span class="cpp1-reservedword">while</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">continuar </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> 's' </span><span class="cpp1-symbol">||</span><span class="cpp1-space"> continuar </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> 'S'</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-comment">//================
+//calculando total
+//================
+
+</span><span class="cpp1-identifier">total </span><span class="cpp1-symbol">=</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">rosa </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">25.00</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">+
+(</span><span class="cpp1-identifier">girassol </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">20.00</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">+
+(</span><span class="cpp1-identifier">tulipa </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">30.00</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">+
+(</span><span class="cpp1-identifier">Orquidea </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">45.00</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-comment">//==================
+//carrinho
+//==================
+
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n\n=======================\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;              SEU CARRINHO\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;===========================\n&quot;</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">rosa </span><span class="cpp1-symbol">&gt;</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">	
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nRosas: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n%d x R$ 25.00 = R$ %.2f\n&quot;</span><span class="cpp1-symbol">,
+</span><span class="cpp1-space">	rosa</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> rosa </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">25.00</span><span class="cpp1-symbol">);
+}
+</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">girassol </span><span class="cpp1-symbol">&gt;</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nGirassol: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n%d x R$ 20.00 = R$ %.2f\n&quot;</span><span class="cpp1-symbol">,
+</span><span class="cpp1-space">	girassol</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> girassol </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">20.00</span><span class="cpp1-symbol">);
+}
+</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">tulipa </span><span class="cpp1-symbol">&gt;</span><span class="cpp1-number">0</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nTulipa: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n%d x R$30.00 = R$.2f\n&quot;</span><span class="cpp1-symbol">,
+</span><span class="cpp1-space">	tulipa</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> tulipa </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">30.00</span><span class="cpp1-symbol">);
+}
+</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">Orquidea </span><span class="cpp1-symbol">&gt;</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nOrquideas: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n%d x R$ 45.00 = R$.2f\n&quot;</span><span class="cpp1-symbol">,
+</span><span class="cpp1-space">	Orquidea</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> Orquidea </span><span class="cpp1-symbol">*</span><span class="cpp1-space"> </span><span class="cpp1-float">45.00</span><span class="cpp1-symbol">);
+}
+
+</span><span class="cpp1-comment">//================
+//resumo compra
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n===========================\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;               RESUMO DA COMPRA&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n===========================\n&quot;</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nCliente: %s&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> usuario</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nQuantidade: %d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> 	quantidade</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nTotal de compra: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> total</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n==================================\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-identifier">printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nFloricultura agradece pela sua compra, Volte sempre!\n&quot;</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-reservedword">return</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+}
+</span></span>
+</code></pre>
+</body>
+</html>

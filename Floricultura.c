@@ -1,31 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "Login.h"
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int main(int argc, char *argv[]) {	
-	//login
-	char usuario[20];
-	char senha[20];
-	printf("===Floricultura===\n");
+int main(void){
+	char usuario [50];
 	
-	printf("Digite seu usuario: ");
-	scanf("%19s", &usuario);
-	
-	printf("digite sua senha: ");
-	scanf("%19s", &senha);
-	
-	//verificando usuario e senha
-	if (strcmp(usuario, "Login") ==  0 && strcmp(senha, "1234") == 0){
-		printf("\nLogin realizado com sucesso! \n");
-		printf("Bem vindo, %s\n", usuario);
-	}	
-	else{
-		printf("\nUsuario incorreto ou senha incorreto!\n");
-
-	return 0;
-}
+	if(cadastroELogin(usuario, sizeof(usuario)) == 0){
+		printf("\nPrograma Encerrado! ");
+		return 0;
+	}
 
 //==========
 //carrinho
@@ -33,7 +18,6 @@ int main(int argc, char *argv[]) {
 
 int opcao;
 int quantidade;
-
 float total = 0;
 
 int rosa = 0;
@@ -41,6 +25,7 @@ int girassol = 0;
 int tulipa = 0;
 int Orquidea = 0;
 
+    // Mostrar o menu da floricultura
 
 char continuar;
 //==========
@@ -90,7 +75,7 @@ switch(opcao){
 				scanf("%d", &quantidade);
 				
 				tulipa = tulipa + quantidade;
-				printf("\Tulipa adicionado no carrinho!");
+				printf("\nTulipa adicionado no carrinho!");
 				
 			   break;
 				
@@ -105,6 +90,7 @@ switch(opcao){
 				
 				case 5:
 					printf("\nFinalizando compra...");
+					break;
 				
 				default:
 				printf("\nOpcao invalida!\n ");
@@ -157,12 +143,12 @@ if (girassol > 0){
 }
 if (tulipa >0){
 	printf("\nTulipa: ");
-	printf("\n%d x R$30.00 = R$.2f\n",
+	printf("\n%d x R$30.00 = R$ %.2f\n",
 	tulipa, tulipa * 30.00);
 }
 if (Orquidea > 0){
 	printf("\nOrquideas: ");
-	printf("\n%d x R$ 45.00 = R$.2f\n",
+	printf("\n%d x R$ 45.00 = R$ %.2f\n",
 	Orquidea, Orquidea * 45.00);
 }
 
@@ -172,8 +158,8 @@ printf("\n===========================\n");
 printf("               RESUMO DA COMPRA");
 printf("\n===========================\n");
 
-printf("\nCliente: %s", usuario);
-printf("\nQuantidade: %d", 	quantidade);
+
+printf("\nQuantidade: %d", rosa + girassol + tulipa + Orquidea);
 printf("\nTotal de compra: %.2f", total);
 
 printf("\n==================================\n");
@@ -181,3 +167,4 @@ printf("\nFloricultura agradece pela sua compra, Volte sempre!\n");
 
 return 0;
 }
+

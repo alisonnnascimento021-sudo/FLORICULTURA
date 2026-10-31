@@ -1,6 +1,8 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+
 #include "Login.h"
 
 /* =====================================
@@ -54,15 +56,22 @@ int cadastroELogin(char usuarioLogado[], int tamanho,
                    int *perfilLogado) {
 
     FILE *arquivo;
+
     char usuarioDigitado[50];
     char senhaDigitada[50];
+
     char usuarioArquivo[50];
     char senhaArquivo[50];
+
     int perfilArquivo;
     int tentativas = 3;
     int encontrouUsuario;
 
-    /* Verifica se o arquivo de usuarios existe */
+    if (tamanho <= 0 || perfilLogado == NULL) {
+        return 0;
+    }
+
+    /* Verifica se usuarios.txt existe */
     arquivo = fopen("usuarios.txt", "r");
 
     if (arquivo == NULL) {
@@ -92,7 +101,8 @@ int cadastroELogin(char usuarioLogado[], int tamanho,
 
         encontrouUsuario = 0;
 
-        while (fscanf(arquivo, "%49[^;];%49[^;];%d\n",
+        while (fscanf(arquivo,
+                      " %49[^;];%49[^;];%d",
                       usuarioArquivo,
                       senhaArquivo,
                       &perfilArquivo) == 3) {
@@ -116,10 +126,18 @@ int cadastroELogin(char usuarioLogado[], int tamanho,
 
             printf("\nLogin realizado com sucesso!\n");
 
+            /* PERFIL 1 = GERENTE */
             if (*perfilLogado == 1) {
                 printf("Perfil: GERENTE\n");
+
+            /* PERFIL 2 = BALCONISTA */
             } else if (*perfilLogado == 2) {
                 printf("Perfil: BALCONISTA\n");
+
+            /* PERFIL 3 = CLIENTE */
+            } else if (*perfilLogado == 3) {
+                printf("Perfil: CLIENTE\n");
+
             } else {
                 printf("Perfil desconhecido. Acesso negado.\n");
                 return 0;
@@ -141,19 +159,20 @@ int cadastroELogin(char usuarioLogado[], int tamanho,
 
 /* =====================================
    CADASTRAR BALCONISTA
-   Somente o gerente pode chamar esta funcao
+   Perfil 2
    ===================================== */
 void cadastrarBalconista(void) {
 
     FILE *arquivo;
+
     char novoUsuario[50];
     char novaSenha[50];
     char confirmarSenha[50];
 
     char usuarioArquivo[50];
     char senhaArquivo[50];
-    int perfilArquivo;
 
+    int perfilArquivo;
     int encontrou = 0;
 
     printf("\n=== CADASTRO DE BALCONISTA ===\n");
@@ -161,7 +180,6 @@ void cadastrarBalconista(void) {
     printf("Novo usuario: ");
     scanf("%49s", novoUsuario);
 
-    /* Verifica se o usuario ja existe */
     arquivo = fopen("usuarios.txt", "r");
 
     if (arquivo == NULL) {
@@ -169,7 +187,8 @@ void cadastrarBalconista(void) {
         return;
     }
 
-    while (fscanf(arquivo, "%49[^;];%49[^;];%d\n",
+    while (fscanf(arquivo,
+                  " %49[^;];%49[^;];%d",
                   usuarioArquivo,
                   senhaArquivo,
                   &perfilArquivo) == 3) {
@@ -198,7 +217,6 @@ void cadastrarBalconista(void) {
         return;
     }
 
-    /* "a" acrescenta um usuario sem apagar os anteriores */
     arquivo = fopen("usuarios.txt", "a");
 
     if (arquivo == NULL) {
@@ -216,10 +234,13 @@ void cadastrarBalconista(void) {
     printf("Usuario: %s\n", novoUsuario);
     printf("Perfil: BALCONISTA\n");
 }
+
 /* =====================================
    CADASTRAR CLIENTE
+   Perfil 3
    ===================================== */
 void cadastrarCliente(void) {
+
     FILE *arquivoUsuarios;
     FILE *arquivoClientes;
 
@@ -235,6 +256,7 @@ void cadastrarCliente(void) {
 
     char usuarioArquivo[50];
     char senhaArquivo[50];
+
     int perfilArquivo;
     int encontrou = 0;
 
@@ -258,7 +280,7 @@ void cadastrarCliente(void) {
     printf("\nCrie seu nome de usuario (sem espacos): ");
     scanf("%49s", novoUsuario);
 
-    /* Verifica se o nome de usuario ja existe */
+    /* Verifica se o usuario ja existe */
     arquivoUsuarios = fopen("usuarios.txt", "r");
 
     if (arquivoUsuarios == NULL) {
@@ -267,8 +289,10 @@ void cadastrarCliente(void) {
         return;
     }
 
-    while (fscanf(arquivoUsuarios, "%49[^;];%49[^;];%d\n",
-                  usuarioArquivo, senhaArquivo,
+    while (fscanf(arquivoUsuarios,
+                  " %49[^;];%49[^;];%d",
+                  usuarioArquivo,
+                  senhaArquivo,
                   &perfilArquivo) == 3) {
 
         if (strcmp(novoUsuario, usuarioArquivo) == 0) {
@@ -296,7 +320,7 @@ void cadastrarCliente(void) {
         return;
     }
 
-    /* Salva os dados pessoais do cliente */
+    /* Salva os dados pessoais */
     arquivoClientes = fopen("clientes.txt", "a");
 
     if (arquivoClientes == NULL) {
@@ -304,7 +328,8 @@ void cadastrarCliente(void) {
         return;
     }
 
-    fprintf(arquivoClientes, "%s;%s;%s;%s;%s;%s\n",
+    fprintf(arquivoClientes,
+            "%s;%s;%s;%s;%s;%s\n",
             novoUsuario,
             nomeCompleto,
             cpf,
@@ -314,7 +339,7 @@ void cadastrarCliente(void) {
 
     fclose(arquivoClientes);
 
-    /* Salva o login: perfil 3 = cliente */
+    /* Salva o login do cliente */
     arquivoUsuarios = fopen("usuarios.txt", "a");
 
     if (arquivoUsuarios == NULL) {
@@ -323,6 +348,7 @@ void cadastrarCliente(void) {
         return;
     }
 
+    /* Perfil 3 = cliente */
     fprintf(arquivoUsuarios, "%s;%s;3\n",
             novoUsuario, novaSenha);
 
@@ -330,5 +356,7 @@ void cadastrarCliente(void) {
 
     printf("\nCadastro realizado com sucesso!\n");
     printf("Bem-vindo(a), %s!\n", nomeCompleto);
-    printf("Agora voce pode fazer login como cliente.\n");
+    printf("Perfil: CLIENTE\n");
+    printf("Agora voce pode fazer login.\n");
 }
+

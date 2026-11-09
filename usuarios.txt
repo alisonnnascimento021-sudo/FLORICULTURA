@@ -1,4 +1,9 @@
-Alison;senha123;1
+Alison;senha@123;1
 Juan;1234;2
 FELIPE;1234;3
 Felipe;123;3
+priscila;123456;3
+Priscila;123456;2
+Thiago;senha@123;3
+Nicolas;senha@123;2
+Laryssa;senha@123;3

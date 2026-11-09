@@ -1,8 +1,13 @@
-
 #ifndef PRODUTOS_H
 #define PRODUTOS_H
 
 #define MAX_CARRINHO 100
+
+/* Comandos de navegacao */
+#define NAV_OK 0
+#define NAV_VOLTAR 1
+#define NAV_LOGOUT 2
+#define NAV_SAIR 3
 
 struct Produto {
     int codigo;
@@ -20,9 +25,11 @@ struct ItemCarrinho {
     int quantidade;
 };
 
-void cadastrarProduto(void);
-void consultarProdutos(void);
-void mostrarCatalogo(void);
+int cadastrarProduto(void);
+int alterarProduto(void);
+int consultarProdutos(void);
+int mostrarCatalogo(void);
+int removerProduto(void);
 
 int adicionarAoCarrinho(
     struct ItemCarrinho carrinho[],
@@ -34,10 +41,20 @@ void mostrarCarrinho(
     int totalItens
 );
 
+int gerenciarCarrinho(
+    struct ItemCarrinho carrinho[],
+    int *totalItens
+);
+
 float calcularTotal(
     struct ItemCarrinho carrinho[],
     int totalItens
 );
 
-#endif
+/* Atualizar estoque depois da venda */
+int atualizarEstoque(
+    struct ItemCarrinho carrinho[],
+    int totalItens
+);
 
+#endif

@@ -1,0 +1,15 @@
+FELIPE;100.00;Cartao de credito;03/11/2026 19:35
+FELIPE;50.00;Dinheiro;03/11/2026 20:09
+Priscila;5.00;Dinheiro;07/11/2026 23:20
+FELIPE;25.00;Dinheiro;07/11/2026 23:24
+Laryssa;5.00;Dinheiro;08/11/2026 19:15
+Laryssa;40.00;Cartao de credito;09/11/2026 04:02
+Laryssa;25.00;Cartao de credito;09/11/2026 04:08
+Laryssa;32.00;Pix;09/11/2026 04:47;Entrega em casa;05665010;12.00;7.21
+Laryssa;37.00;Pix;09/11/2026 04:51;Entrega em casa;05665010;12.00;7.21
+Laryssa;32.00;Pix;09/11/2026 05:06;Entrega em casa;05665010;12.00;7.21
+Laryssa;32.00;Pix;09/11/2026 05:09;Entrega em casa;05665010;12.00;7.21
+Laryssa;20.00;Pix;09/11/2026 05:36;Retirada na loja;Nao se aplica;0.00;0.00
+Laryssa;20.00;Pix;09/11/2026 11:49;Retirada na loja;Nao se aplica;0.00;0.00
+Laryssa;20.00;Pix;09/11/2026 12:07;Retirada na loja;Nao se aplica;0.00;0.00
+Laryssa;62.00;Pix;09/11/2026 12:17;Entrega em casa;05665010;12.00;7.21

@@ -1,0 +1,2 @@
+1002;Pedido so faltando entregar
+1;Pedido cuidado na entrega

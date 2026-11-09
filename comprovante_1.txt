@@ -1,0 +1,22 @@
+========================================
+       FLORICULTURA VAN GOGH
+          COMPROVANTE DE PEDIDO
+========================================
+
+Numero do pedido: 1
+Cliente: Laryssa
+Data: 09/11/2026 12:17
+
+PRODUTOS:
+- acao
+
+----------------------------------------
+Valor total: R$ 62.00
+Pagamento: Pix
+Recebimento: Entrega em casa
+Status: Em preparacao
+
+========================================
+       Obrigado pela preferencia!
+          FLORICULTURA VAN GOGH
+========================================
